@@ -88,17 +88,17 @@ const HomeHero = () => {
                 >
                   <path
                     d="M3.5 13L11.5 5"
-                    stroke="#DFB791"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    stroke="#fff"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                   ></path>
                   <path
                     d="M5.5 4H12.1667V10.6667"
-                    stroke="#DFB791"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    stroke="#fff"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                   ></path>
                 </svg>
               </div>
