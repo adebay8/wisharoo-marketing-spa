@@ -16,6 +16,13 @@
   justify-content: space-between;
   position: relative;
   height: 100%;
+
+  @media (max-width: 37.5em) {
+    padding-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 .pageContainer {
@@ -30,6 +37,10 @@
   align-items: center;
   justify-content: center;
   gap: 12px;
+
+  @media (max-width: 37.5em) {
+    display: none;
+  }
 }
 
 .navLink {

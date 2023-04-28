@@ -1,10 +1,11 @@
 import cx from "classnames";
 import styles from "./hero.module.scss";
+import Link from "next/link";
 
 const HomeHero = () => {
   return (
     <section id="hero">
-      <div className={styles.homeContainer}>
+      <div className={styles.heroContainer}>
         <div className={styles.homeTitle}>
           <div className={styles.homeTitleInner}>
             <h1 className={styles.homeTitleText}>
@@ -57,11 +58,11 @@ const HomeHero = () => {
                     y2="1.5"
                     gradientUnits="userSpaceOnUse"
                   >
-                    <stop stop-color="#F1B43D" stop-opacity="0"></stop>
-                    <stop offset="0.518749" stop-color="#F1B43D"></stop>
+                    <stop stopColor="#F1B43D" stop-opacity="0"></stop>
+                    <stop offset="0.518749" stopColor="#F1B43D"></stop>
                     <stop
                       offset="1"
-                      stop-color="#F1B43D"
+                      stopColor="#F1B43D"
                       stop-opacity="0"
                     ></stop>
                   </linearGradient>
@@ -143,18 +144,68 @@ const HomeHero = () => {
                 y2="151"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop stop-color="#18FF2F" stop-opacity="0"></stop>
+                <stop stopColor="#18FF2F" stop-opacity="0"></stop>
                 <stop
                   offset="0.518749"
-                  stop-color="#18FF2F"
+                  stopColor="#18FF2F"
                   stop-opacity="0.481251"
                 ></stop>
-                <stop offset="1" stop-color="#18FF2F" stop-opacity="0"></stop>
+                <stop offset="1" stopColor="#18FF2F" stop-opacity="0"></stop>
               </linearGradient>
             </defs>
           </svg>
         </div>
       </div>
+      <ul className={styles.navLinksMobile}>
+        {[
+          {
+            id: 1,
+            href: "https://twitter.com/pnslabs",
+            icon: (
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M21.0571 7.18078C21.0664 7.39198 21.0664 7.59358 21.0664 7.80478C21.0756 14.208 16.3712 21.6 7.76793 21.6C5.23048 21.6 2.73933 20.8416 0.600098 19.4208C0.970528 19.4688 1.34096 19.488 1.71139 19.488C3.81358 19.488 5.86021 18.7584 7.51789 17.4048C5.51756 17.3664 3.75802 16.0128 3.14681 14.0352C3.85063 14.1792 4.57296 14.1504 5.25826 13.9488C3.08198 13.5072 1.51691 11.52 1.50765 9.20639C1.50765 9.18719 1.50765 9.16799 1.50765 9.14879C2.15591 9.52319 2.88751 9.73439 3.62837 9.75359C1.58174 8.33278 0.942746 5.50077 2.18369 3.28317C4.5637 6.31678 8.06427 8.15038 11.8241 8.35198C11.4445 6.67198 11.9631 4.90557 13.1762 3.71517C15.0561 1.88156 18.0196 1.97756 19.7977 3.92637C20.8441 3.71517 21.8535 3.31197 22.7704 2.74556C22.4185 3.86877 21.6869 4.81917 20.7145 5.42397C21.6406 5.30877 22.5481 5.04957 23.4001 4.66557C22.7704 5.64477 21.9739 6.48958 21.0571 7.18078Z"
+                  fill="#753FF6"
+                  className={styles.socialIcon}
+                ></path>
+              </svg>
+            ),
+          },
+          {
+            id: 2,
+            href: "https://t.me/pnslabs",
+            icon: (
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fillRule="evenodd"
+                  clipRule="evenodd"
+                  d="M2.0369 11.2933C8.23838 8.59137 12.3737 6.81013 14.4428 5.94952C20.3505 3.4923 21.5781 3.06545 22.3782 3.05136C22.5542 3.04826 22.9476 3.09187 23.2025 3.29868C23.4177 3.47331 23.4769 3.70921 23.5053 3.87478C23.5336 4.04035 23.5689 4.41752 23.5408 4.71222C23.2207 8.07597 21.8355 16.2389 21.1307 20.0063C20.8325 21.6005 20.2454 22.135 19.6769 22.1873C18.4416 22.301 17.5035 21.3709 16.307 20.5866C14.4347 19.3593 13.377 18.5953 11.5596 17.3976C9.45927 16.0136 10.8208 15.2529 12.0178 14.0097C12.331 13.6843 17.774 8.73347 17.8794 8.28435C17.8926 8.22818 17.9048 8.01881 17.7804 7.90825C17.656 7.79769 17.4724 7.8355 17.34 7.86557C17.1522 7.90819 14.1612 9.88513 8.36691 13.7964C7.51793 14.3794 6.74894 14.6634 6.05995 14.6485C5.3004 14.6321 3.83932 14.2191 2.75317 13.866C1.42095 13.433 0.362128 13.204 0.454327 12.4686C0.50235 12.0855 1.02987 11.6937 2.0369 11.2933Z"
+                  fill="#753FF6"
+                  className={styles.socialIcon}
+                ></path>
+              </svg>
+            ),
+          },
+        ].map((navItem) => (
+          <li key={navItem.id}>
+            <Link href={navItem.href} rel="noopener noreferrer" target="_blank">
+              <div className={styles.navLink}>{navItem.icon}</div>
+            </Link>
+          </li>
+        ))}
+      </ul>
     </section>
   );
 };
