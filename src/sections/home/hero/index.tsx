@@ -13,7 +13,7 @@ const HomeHero = () => {
   const [showModal, setShowModal] = useState(false);
 
   return (
-    <section id="hero">
+    <section id={styles.hero}>
       <div className={styles.heroContainer}>
         <div className={styles.homeTitle}>
           <div className={styles.homeTitleInner}>
@@ -115,7 +115,7 @@ const HomeHero = () => {
             </div>
           </button>
         </div>
-        <div className="home__green green-circle" style={{ opacity: 0 }}>
+        {/* <div className="home__green green-circle" style={{ opacity: 0 }}>
           <svg
             width="8"
             height="8"
@@ -163,13 +163,13 @@ const HomeHero = () => {
               </linearGradient>
             </defs>
           </svg>
-        </div>
+        </div> */}
       </div>
       <ul className={styles.navLinksMobile}>
         {[
           {
             id: 1,
-            href: "https://twitter.com/pnslabs",
+            href: "https://twitter.com/wisharoo",
             icon: (
               <svg
                 width="24"

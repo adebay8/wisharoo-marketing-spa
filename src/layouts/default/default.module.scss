@@ -1,6 +1,14 @@
 .page {
   height: 100vh;
   background: #fff;
+
+  main {
+    height: calc(85vh);
+
+    @media (min-width: 1440px) {
+      height: calc(100vh - 10vh);
+    }
+  }
 }
 
 .header {
