@@ -1,10 +1,19 @@
 import cx from "classnames";
 import styles from "./hero.module.scss";
 import Link from "next/link";
+import WaitListForm from "../waitListForm";
+import dynamic from "next/dynamic";
+import { useState } from "react";
+
+const Modal = dynamic(() => import("@/components/modal"), {
+  ssr: false,
+});
 
 const HomeHero = () => {
+  const [showModal, setShowModal] = useState(false);
+
   return (
-    <section id="hero">
+    <section id={styles.hero}>
       <div className={styles.heroContainer}>
         <div className={styles.homeTitle}>
           <div className={styles.homeTitleInner}>
@@ -58,13 +67,9 @@ const HomeHero = () => {
                     y2="1.5"
                     gradientUnits="userSpaceOnUse"
                   >
-                    <stop stopColor="#F1B43D" stop-opacity="0"></stop>
+                    <stop stopColor="#F1B43D" stopOpacity="0"></stop>
                     <stop offset="0.518749" stopColor="#F1B43D"></stop>
-                    <stop
-                      offset="1"
-                      stopColor="#F1B43D"
-                      stop-opacity="0"
-                    ></stop>
+                    <stop offset="1" stopColor="#F1B43D" stopOpacity="0"></stop>
                   </linearGradient>
                 </defs>
               </svg>
@@ -76,7 +81,11 @@ const HomeHero = () => {
           </p>
         </div>
         <div className={styles.homeButtonWrapper}>
-          <button type="button" className={cx(styles.button, styles.primary)}>
+          <button
+            type="button"
+            className={cx(styles.button, styles.primary)}
+            onClick={() => setShowModal(true)}
+          >
             <div className={styles.buttonWrapper}>
               <div className="button__text">Join Waitlist</div>
               <div className={styles.buttonIcon}>
@@ -106,7 +115,7 @@ const HomeHero = () => {
             </div>
           </button>
         </div>
-        <div className="home__green green-circle" style={{ opacity: 0 }}>
+        {/* <div className="home__green green-circle" style={{ opacity: 0 }}>
           <svg
             width="8"
             height="8"
@@ -144,23 +153,23 @@ const HomeHero = () => {
                 y2="151"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop stopColor="#18FF2F" stop-opacity="0"></stop>
+                <stop stopColor="#18FF2F" stopOpacity="0"></stop>
                 <stop
                   offset="0.518749"
                   stopColor="#18FF2F"
-                  stop-opacity="0.481251"
+                  stopOpacity="0.481251"
                 ></stop>
-                <stop offset="1" stopColor="#18FF2F" stop-opacity="0"></stop>
+                <stop offset="1" stopColor="#18FF2F" stopOpacity="0"></stop>
               </linearGradient>
             </defs>
           </svg>
-        </div>
+        </div> */}
       </div>
       <ul className={styles.navLinksMobile}>
         {[
           {
             id: 1,
-            href: "https://twitter.com/pnslabs",
+            href: "https://twitter.com/wisharoo",
             icon: (
               <svg
                 width="24"
@@ -206,6 +215,9 @@ const HomeHero = () => {
           </li>
         ))}
       </ul>
+      <Modal showModal={showModal} setShowModal={setShowModal}>
+        <WaitListForm />
+      </Modal>
     </section>
   );
 };

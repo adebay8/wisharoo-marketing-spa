@@ -1,0 +1,31 @@
+.input {
+  width: 100%;
+  margin-bottom: 55px;
+  height: 65px;
+
+  .inputField {
+    width: 100%;
+    padding: 6px 10px 6px 20px;
+    height: 56px;
+    border: 1px solid #2c2c2c;
+    background: #efefef;
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
+    margin-top: 12px;
+    font-size: 16px;
+    color: #000;
+  }
+}
+
+.label {
+  font-size: 16px;
+  color: #555;
+  font-weight: 400;
+  line-height: 150%;
+}
+
+.error {
+  margin-top: 5px;
+  font-size: 12px;
+  color: #f87171;
+}

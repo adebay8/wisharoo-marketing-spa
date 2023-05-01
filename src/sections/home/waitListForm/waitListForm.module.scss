@@ -1,0 +1,67 @@
+.waitListFormContainer {
+  padding: 0 40px;
+}
+
+.waitListFormHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.waitListFormTitle {
+  font-weight: 700;
+  font-size: 50px;
+  line-height: 100%;
+  color: #000;
+}
+
+.waitListFormDescription {
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: 400;
+  color: #666;
+  margin-top: 20px;
+  max-width: 95%;
+}
+
+.waitListForm {
+  width: 100%;
+}
+
+.waitListFormInputWrapper {
+  margin-top: 40px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.waitListFormButton {
+  padding-top: 40px;
+  padding-bottom: 40px;
+
+  .button {
+    border: 1px solid #ba9ffa;
+    background: #753ff6;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    height: 56px;
+    padding: 16px 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+
+    &Wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9.5px;
+    }
+
+    &Icon {
+      transition: all 0.3s ease;
+    }
+  }
+}

@@ -42,7 +42,7 @@ const DefaultLayout: React.FC<DefaultLayoutProps> = ({ children, pageId }) => {
             {[
               {
                 id: 1,
-                href: "https://twitter.com/pnslabs",
+                href: "https://twitter.com/wisharoo",
                 icon: (
                   <svg
                     width="24"

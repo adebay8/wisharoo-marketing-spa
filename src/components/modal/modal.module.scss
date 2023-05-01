@@ -1,0 +1,62 @@
+.modalDesktopWrapper {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 9999999999999;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+}
+
+.modalDesktopInnerWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 9999999999999;
+  width: 100%;
+}
+
+.modalDesktopContainer {
+  min-height: 30vh;
+  width: 100%;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+}
+
+.modalDesktopInner {
+  background: #fff;
+  border: 1px solid #2c2c2c;
+  width: 100%;
+  z-index: 9999999999999;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modalDesktopChild {
+  overflow-y: auto;
+}
+
+.modalBody {
+  position: relative;
+}
+
+.homeIcon {
+  position: relative;
+  padding-top: 40px;
+  padding-right: 40px;
+  z-index: 2;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
