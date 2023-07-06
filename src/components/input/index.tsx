@@ -2,14 +2,19 @@ import cx from "classnames";
 import styles from "./input.module.scss";
 import _ from "lodash";
 
-interface InputProps {
-  name: string;
-  className?: string;
-  placeholder?: string;
-  type: string;
-}
+type InputProps = React.InputHTMLAttributes<HTMLInputElement> & {
+  error?: string;
+  touched?: boolean;
+};
 
-const Input: React.FC<InputProps> = ({ name, placeholder, type }) => {
+const Input: React.FC<InputProps> = ({
+  name,
+  placeholder,
+  type,
+  error,
+  touched,
+  ...props
+}) => {
   return (
     <div className={styles.input}>
       <label htmlFor={name} className={styles.label}>
@@ -21,8 +26,13 @@ const Input: React.FC<InputProps> = ({ name, placeholder, type }) => {
         placeholder={placeholder}
         type={type}
         name={name}
+        {...props}
       />
-      <p className={styles.error}>{_.startCase(name)} is required</p>
+      {error && touched && (
+        <p className={styles.error}>
+          {_.startCase(name)} {error}
+        </p>
+      )}
     </div>
   );
 };
