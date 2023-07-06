@@ -1,6 +1,6 @@
 import cx from "classnames";
 import styles from "./waitListForm.module.scss";
-import { Input } from "@/components";
+import { Input, Spinner } from "@/components";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import { useMutation } from "@apollo/client";
@@ -114,7 +114,11 @@ const WaitListForm: React.FC<{
                   className={styles.button}
                   disabled={isSubmitting}
                 >
-                  <div className={styles.buttonWrapper}>
+                  <div
+                    className={cx(styles.buttonWrapper, {
+                      [styles.submitting]: isSubmitting,
+                    })}
+                  >
                     <div className={styles.buttonText}>Join Waitlist</div>
                     <div className={styles.buttonIcon}>
                       <svg
@@ -141,6 +145,11 @@ const WaitListForm: React.FC<{
                       </svg>
                     </div>
                   </div>
+                  {isSubmitting ? (
+                    <span className={cx(styles.spinner)}>
+                      <Spinner size={18} />
+                    </span>
+                  ) : null}
                 </button>
               </div>
             </form>
