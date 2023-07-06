@@ -216,7 +216,7 @@ const HomeHero = () => {
         ))}
       </ul>
       <Modal showModal={showModal} setShowModal={setShowModal}>
-        <WaitListForm />
+        <WaitListForm setShowModal={setShowModal} />
       </Modal>
     </section>
   );

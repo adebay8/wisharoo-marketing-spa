@@ -20,6 +20,7 @@ const usePortal = (el: Element | DocumentFragment): [Portal, RemovePortal] => {
 
   const createPortal = useCallback((el: Element | DocumentFragment) => {
     return { render, remove };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -31,6 +32,7 @@ const usePortal = (el: Element | DocumentFragment): [Portal, RemovePortal] => {
     return () => {
       newPortal.remove(el);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [el]);
 
   return [portal.render, portal.remove];
